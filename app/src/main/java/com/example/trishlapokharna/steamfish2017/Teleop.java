@@ -113,7 +113,7 @@ public class Teleop {
         consistency2 = (TextView) in.findViewById(R.id.textView11);
         b = (Spinner) in.findViewById(R.id.spinnerB);
         addItemsOnSpinner2();
-
+te
         climbOrNone = (ToggleButton) in.findViewById(R.id.takeOffToggleButton);
 
 
