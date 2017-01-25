@@ -57,7 +57,7 @@ public class PostMatch extends Fragment {
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
-        View in = inflater.inflate(R.layout.activity_post_match, container, false); // adds PostMatch tab to input activity
+        View in = inflater.inflate(R.layout. postmatch, container, false); // adds PostMatch tab to input activity
 
         notesText = (EditText) in.findViewById(R.id.notesEdit);
         reach = (ToggleButton) in.findViewById(R.id.reachToggle);

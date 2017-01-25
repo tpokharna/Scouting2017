@@ -304,7 +304,7 @@
                     android:layout_weight=".5"
                     android:layout_height="wrap_content"
                     android:entries="@array/category_d"
-                    android:id="@+id/spinnerD" />
+                    android:id="@+id/spinnerB" />
             </TableRow>
 
         </TableLayout>
@@ -367,7 +367,7 @@
                 android:text="5"
                 android:padding="20dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/lowGoalAddFiveButton" />
+                android:id="@+id/lowGoalAddFive" />
 
             <Button
                 android:layout_width="0dp"
@@ -376,7 +376,7 @@
                 android:text="1O"
                 android:padding="20dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/lowGoalAddTenButton" />
+                android:id="@+id/lowGoalAddTen" />
 
             <Button
                 android:layout_width="0dp"
@@ -385,7 +385,7 @@
                 android:text="20"
                 android:padding="20dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/lowGoalAddTwentyButton" />
+                android:id="@+id/lowGoalAddTwenty" />
 
             <Space
                 android:layout_width="0dp"
@@ -413,7 +413,7 @@
                 android:layout_weight=".5"
                 android:layout_height="wrap_content"
                 android:entries="@array/category_b"
-                android:id="@+id/spinnerB" />
+                android:id="@+id/spinnerD" />
         </TableRow>
 
 

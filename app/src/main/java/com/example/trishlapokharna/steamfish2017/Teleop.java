@@ -54,9 +54,9 @@ public class Teleop {
 
     TextView highGoals;
     TextView highGoalsView;
-    Button five;
-    Button ten;
-    Button twenty;
+    Button five1;
+    Button ten1;
+    Button twenty1;
     int i;
 
     TextView consistency1;
@@ -64,9 +64,9 @@ public class Teleop {
 
     TextView lowGoals;
     TextView lowGoalView;
-    Button five1;
-    Button ten1;
-    Button twenty1;
+    Button five2;
+    Button ten2;
+    Button twenty2;
     int j;
 
     TextView consistency2;
@@ -75,8 +75,7 @@ public class Teleop {
     ToggleButton climbOrNone;
 
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
 
         View in = inflater.inflate(R.layout.activity_teleop, container, false); // FIX THIS -- adds Autonomous tab to input activity
         offense = (TextView) in.findViewById(R.id.offenseTextView);
@@ -85,32 +84,34 @@ public class Teleop {
         gears = (TextView) in.findViewById(R.id.gearTextView1);
         gearsView = (TextView) in.findViewById(R.id.gearView1);
 
-        one = (Button) in.findViewById(R.id.highGoalHitButton1);
-        zero = (Button) in.findViewById(R.id.highGoalMissButton1);
-        back = (Button) in.findViewById(R.id.highGoalDeleteButton1);
+        one = (Button) in.findViewById(R.id.gearHitButton);
+        zero = (Button) in.findViewById(R.id.gearMissButton);
+        back = (Button) in.findViewById(R.id.gearDeleteButton);
 
         cycleTime = (TextView) in.findViewById(R.id.cycleTimeTextView);
         fastOrSlow = (ToggleButton) in.findViewById(R.id.cycleTimeToggleButton);
 
         highGoals = (TextView) in.findViewById(R.id.highGoalTextView1);
         highGoalsView = (TextView) in.findViewById(R.id.highGoalView);
-        five = (Button) in.findViewById(R.id.highGoalAddFive);
-        ten = (Button) in.findViewById(R.id.highGoalAddTen);
-        twenty = (Button) in.findViewById(R.id.highGoalAddTwenty);
+        five1 = (Button) in.findViewById(R.id.highGoalAddFive);
+        ten1 = (Button) in.findViewById(R.id.highGoalAddTen);
+        twenty1 = (Button) in.findViewById(R.id.highGoalAddTwenty);
         i = 0;
 
         consistency1 = (TextView) in.findViewById(R.id.textView13);
         a = (Spinner) in.findViewById(R.id.spinnerD);
+        addItemsOnSpinner1();
 
         lowGoals = (TextView) in.findViewById(R.id.lowGoalTextView);
         lowGoalView = (TextView) in.findViewById(R.id.lowGoalView2);
-        five1 = (Button) in.findViewById(R.id.lowGoalAddFive);
-        ten1 = (Button) in.findViewById(R.id.lowGoalAddTenButton);
-        twenty1 = (Button) in.findViewById(R.id.lowGoalAddTwentyButton);
+        five2 = (Button) in.findViewById(R.id.lowGoalAddFive);
+        ten2 = (Button) in.findViewById(R.id.lowGoalAddTenButton);
+        twenty2 = (Button) in.findViewById(R.id.lowGoalAddTwentyButton);
         j = 0;
 
         consistency2 = (TextView) in.findViewById(R.id.textView11);
         b = (Spinner) in.findViewById(R.id.spinnerB);
+        addItemsOnSpinner2();
 
         climbOrNone = (ToggleButton) in.findViewById(R.id.takeOffToggleButton);
 
@@ -139,21 +140,21 @@ public class Teleop {
         });
 
 
-        five.setOnClickListener(new View.OnClickListener() {
+        five1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 i += 5;
                 highGoalsView.setText(String.valueOf(i));
             }
 
         });
-        ten.setOnClickListener(new View.OnClickListener() {
+        ten1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 i += 10;
                 highGoalsView.setText(String.valueOf(i));
             }
 
         });
-        twenty.setOnClickListener(new View.OnClickListener() {
+        twenty1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 i += 20;
                 highGoalsView.setText(String.valueOf(i));
@@ -162,7 +163,7 @@ public class Teleop {
         });
 
 
-        five1.setOnClickListener(new View.OnClickListener() {
+        five2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 j += 5;
 
@@ -170,14 +171,14 @@ public class Teleop {
             }
 
         });
-        ten1.setOnClickListener(new View.OnClickListener() {
+        ten2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 j += 10;
                 lowGoalView.setText(String.valueOf(j));
             }
 
         });
-        twenty1.setOnClickListener(new View.OnClickListener() {
+        twenty2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 j += 20;
                 lowGoalView.setText(String.valueOf(j));
@@ -185,25 +186,10 @@ public class Teleop {
 
         });
 
-    public void addItemsOnSpinner2() {
-        // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("None");
-        categories.add("Very Little");
-        categories.add("Some");
-        categories.add("Most");
-        categories.add("All");
 
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
 
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // attaching data adapter to spinner
-        b.setAdapter(dataAdapter);
-    }
-
+}
     public void addItemsOnSpinner1() {
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
@@ -224,5 +210,24 @@ public class Teleop {
     }
 
 
+    public void addItemsOnSpinner2() {
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("None");
+        categories.add("Very Little");
+        categories.add("Some");
+        categories.add("Most");
+        categories.add("All");
 
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        b.setAdapter(dataAdapter);
     }
+
+
+}

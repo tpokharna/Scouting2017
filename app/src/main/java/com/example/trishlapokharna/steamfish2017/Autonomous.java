@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
@@ -51,7 +52,7 @@ public class Autonomous extends Fragment  {
     Button addTen2;
     Button addTwenty2;
 
-   int i;
+    int i;
     int j;
 
     TextView highView;
@@ -75,11 +76,13 @@ public class Autonomous extends Fragment  {
     static Spinner b;
     static Spinner d;
 
-    //IDK THIS  private RoboInfo autoInfo = new RoboInfo();
+   private RoboInfo autoInfo = new RoboInfo();
 
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View in = inflater.inflate(R.layout.activity_autonomous, container, false); // adds Autonomous tab to input activity
+
+
 
         // 2/17 Heher revisions
         matchText = (EditText)in.findViewById(R.id.matchNumberEdit);
@@ -116,6 +119,8 @@ public class Autonomous extends Fragment  {
 
         b = (Spinner) in.findViewById(R.id.spinnerB);
         d = (Spinner) in.findViewById(R.id.spinnerD);
+        addItemsOnSpinnerB();
+        addItemsOnSpinnerD();
 /*
         b.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -228,43 +233,6 @@ public class Autonomous extends Fragment  {
 
 
 
-        public void addItemsOnSpinner2() {
-            // Spinner Drop down elements
-            List<String> categories = new ArrayList<String>();
-            categories.add("None");
-            categories.add("Very Little");
-            categories.add("Some");
-            categories.add("Most");
-            categories.add("All");
-
-            // Creating adapter for spinner
-            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-            // Drop down layout style - list view with radio button
-            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-            // attaching data adapter to spinner
-            b.setAdapter(dataAdapter);
-        }
-
-        public void addItemsOnSpinner1() {
-            // Spinner Drop down elements
-            List<String> categories = new ArrayList<String>();
-            categories.add("None");
-            categories.add("Very Little");
-            categories.add("Some");
-            categories.add("Most");
-            categories.add("All");
-
-            // Creating adapter for spinner
-            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-            // Drop down layout style - list view with radio button
-            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-            // attaching data adapter to spinner
-            d.setAdapter(dataAdapter);
-        }
 
 
 
@@ -336,4 +304,43 @@ public class Autonomous extends Fragment  {
         fragment.setArguments(bundle);
         return fragment;
     }*/
+
+    public void addItemsOnSpinnerB() {
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("None");
+        categories.add("Very Little");
+        categories.add("Some");
+        categories.add("Most");
+        categories.add("All");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        b.setAdapter(dataAdapter);
+    }
+
+    public void addItemsOnSpinnerD() {
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("None");
+        categories.add("Very Little");
+        categories.add("Some");
+        categories.add("Most");
+        categories.add("All");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        d.setAdapter(dataAdapter);
+    }
+
 }
