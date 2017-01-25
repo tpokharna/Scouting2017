@@ -97,6 +97,7 @@ public class Teleop {
         ten1 = (Button) in.findViewById(R.id.highGoalAddTen);
         twenty1 = (Button) in.findViewById(R.id.highGoalAddTwenty);
         i = 0;
+        //hello
 
         consistency1 = (TextView) in.findViewById(R.id.textView13);
         a = (Spinner) in.findViewById(R.id.spinnerD);
