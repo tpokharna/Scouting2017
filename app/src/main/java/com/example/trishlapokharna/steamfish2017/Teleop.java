@@ -97,7 +97,6 @@ public class Teleop {
         ten1 = (Button) in.findViewById(R.id.highGoalAddTen);
         twenty1 = (Button) in.findViewById(R.id.highGoalAddTwenty);
         i = 0;
-        //hello
 
         consistency1 = (TextView) in.findViewById(R.id.textView13);
         a = (Spinner) in.findViewById(R.id.spinnerD);
@@ -113,7 +112,6 @@ public class Teleop {
         consistency2 = (TextView) in.findViewById(R.id.textView11);
         b = (Spinner) in.findViewById(R.id.spinnerB);
         addItemsOnSpinner2();
-te
         climbOrNone = (ToggleButton) in.findViewById(R.id.takeOffToggleButton);
 
 
