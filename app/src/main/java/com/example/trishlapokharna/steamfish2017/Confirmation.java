@@ -89,7 +89,7 @@ public class Confirmation {
         consistencyL2 = (TextView) findViewById(R.id.lowGoalConsistencyDisplay1);
 
         notes = (TextView) findViewById(R.id.notesDisplay);
-        reachedPressure = (TextView) findViewById. (R.id.pressureDisplay);
+        reachedPressure = (TextView) findViewById (R.id.pressureDisplay);
         takeOff = (TextView) findViewById(R.id.takeoffDisplay);
         result = (TextView) findViewById(R.id.resultDisplay);
         totalPoints = (TextView) findViewById(R.id.totalPointsDisplay);
