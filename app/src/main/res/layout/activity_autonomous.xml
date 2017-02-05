@@ -299,7 +299,7 @@
                     android:layout_weight=".5"
                     android:layout_height="wrap_content"
                     android:textAppearance="@android:style/TextAppearance.Medium"
-                    android:text="Consistency"
+                    android:text="Consistency for High Goals"
                     android:id="@+id/textView13" />
                 <Spinner
                     android:layout_width="0dp"
@@ -408,7 +408,7 @@
                 android:layout_weight=".5"
                 android:layout_height="wrap_content"
                 android:textAppearance="@android:style/TextAppearance.Medium"
-                android:text="Consistency"
+                android:text="Consistency for Low Goals"
                 android:id="@+id/textView11" />
             <Spinner
                 android:layout_width="0dp"

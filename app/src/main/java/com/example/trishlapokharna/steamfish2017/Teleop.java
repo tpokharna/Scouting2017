@@ -40,37 +40,37 @@ public class Teleop {
     RoboInfo myRobo = RoboInfo.getInstance();
 
     TextView offense;
-    ToggleButton offenseOrDefense;
+    static ToggleButton offenseOrDefense;
 
     TextView gears;
-    TextView gearsView;
+    static TextView gearsView;
 
     Button one;
     Button zero;
     Button back;
 
     TextView cycleTime;
-    ToggleButton fastOrSlow;
+    static ToggleButton fastOrSlow;
 
     TextView highGoals;
-    TextView highGoalsView;
+    static TextView highGoalsView;
     Button five1;
     Button ten1;
     Button twenty1;
     int i;
 
     TextView consistency1;
-    Spinner a;
+    static Spinner a;
 
     TextView lowGoals;
-    TextView lowGoalView;
+    static TextView lowGoalView;
     Button five2;
     Button ten2;
     Button twenty2;
     int j;
 
     TextView consistency2;
-    Spinner b;
+    static Spinner b;
 
     ToggleButton climbOrNone;
 

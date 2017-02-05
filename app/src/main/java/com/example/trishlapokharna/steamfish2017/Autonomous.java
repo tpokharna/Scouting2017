@@ -36,8 +36,8 @@ import java.util.List;
 public class Autonomous extends Fragment  {
 
     RoboInfo myRobo = RoboInfo.getInstance();
-    String matchT;
-    String teamT;
+   // String matchT;
+    // String teamT;
 
 
     Button gearHit;
@@ -55,12 +55,12 @@ public class Autonomous extends Fragment  {
     int i;
     int j;
 
-    TextView highView;
-    TextView lowView;
-    TextView gearsView;
+
+    static TextView gearsView;
 
     TextView gearTextView;
-    TextView highGoalView;
+    static TextView highGoalView;
+    static TextView lowGoalView;
 
     Button submit;
 
@@ -68,8 +68,8 @@ public class Autonomous extends Fragment  {
     static EditText teamText;
     static EditText scouterText;
     static ToggleButton baseLineButton;
-    static TextView highGoal;
-    static TextView lowGoal;
+    TextView highGoal;
+    TextView lowGoal;
     static TextView baselineText;
 
     
@@ -84,7 +84,6 @@ public class Autonomous extends Fragment  {
 
 
 
-        // 2/17 Heher revisions
         matchText = (EditText)in.findViewById(R.id.matchNumberEdit);
         teamText = (EditText)in.findViewById(R.id.teamNumberEdit);
         scouterText = (EditText)in.findViewById(R.id.scouterNameEdit);
@@ -95,6 +94,7 @@ public class Autonomous extends Fragment  {
         baselineText = (TextView) in.findViewById(R.id.baselineTextView);
         gearTextView = (TextView) in.findViewById(R.id.gearTextView);
         highGoalView = (TextView) in.findViewById (R.id.highGoalView);
+        lowGoalView = (TextView) in.findViewById (R.id.lowGoalView);
 
         i = 0;
         j = 0;
@@ -121,39 +121,6 @@ public class Autonomous extends Fragment  {
         d = (Spinner) in.findViewById(R.id.spinnerD);
         addItemsOnSpinnerB();
         addItemsOnSpinnerD();
-/*
-        b.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                Teleop.b.setText(Autonomous.b.getSelectedItem().toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                Teleop.d.setText(Autonomous.b.getSelectedItem().toString());
-            }
-
-        });
-
-        d.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                Teleop.spinner2.setText(Autonomous.d.getSelectedItem().toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                Teleop.spinner2.setText(Autonomous.d.getSelectedItem().toString());
-            }
-
-        });
-
-
-
-*/
-
-
-
 
         gearHit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,7 +152,7 @@ public class Autonomous extends Fragment  {
 
         addFive1.setOnClickListener(new View.OnClickListener() {
            public void onClick (View v){
-                  i +=5;
+                i +=5;
                   highGoalView.setText(String.valueOf(i));
             }
 
@@ -240,7 +207,6 @@ public class Autonomous extends Fragment  {
 
 
 
-        // 2/17 revision
         matchText.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
@@ -281,8 +247,8 @@ public class Autonomous extends Fragment  {
     }
 
 
-
-  /*  @Override
+/*
+    @Override
     public RoboInfo getData() {
         this.autoInfo.matchT = this.matchT; // Assuming subcon has been updated.. else use txt1.getText();
         return this.autoInfo;
@@ -303,8 +269,8 @@ public class Autonomous extends Fragment  {
         bundle.putString("a", "matchText");
         fragment.setArguments(bundle);
         return fragment;
-    }*/
-
+    }
+*/
     public void addItemsOnSpinnerB() {
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
@@ -343,4 +309,6 @@ public class Autonomous extends Fragment  {
         d.setAdapter(dataAdapter);
     }
 
+
 }
+
